@@ -1,9 +1,40 @@
 @use 'variables' as var;
 
 .header {
+  &.open {
+    .overlay {
+      visibility: visible;
+    }
+
+    .header__menu {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(var.$darkBlue, transparent);
+  }
+
   nav {
     padding: 1.7rem 2.4rem;
   }
+
   &__logo {
     img {
       width: 14.1rem;
@@ -17,9 +48,11 @@
       height: 2px;
       display: block;
       background-color: var.$darkBlue;
+      transition: all var.$trans-300;
+      transform-origin: 4px;
 
       &:not(:last-child) {
-        margin-bottom: 3px;
+        margin-bottom: 5px;
       }
     }
   }
@@ -29,7 +62,7 @@
       position: relative;
       font-size: var.$font-sm;
       color: var.$grayishBlue;
-      transition: color 300ms ease-in-out;
+      transition: color var.$trans-300;
 
       &:not(:last-child) {
         margin-right: 32px;
@@ -45,7 +78,7 @@
         right: 0;
         bottom: -30px;
         opacity: 0;
-        transition: opacity 300ms ease-in-out;
+        transition: opacity var.$trans-300;
       }
 
       &:hover {
