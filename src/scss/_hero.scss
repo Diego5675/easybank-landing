@@ -79,21 +79,5 @@
       order: 1;
       text-align: left;
     }
-
-    h1 {
-      margin-bottom: 2.4rem;
-      font-size: 3.7rem;
-      font-weight: 300;
-      line-height: 1.15;
-      color: var.$darkBlue;
-
-      @include mixins.breakpoint-up(large) {
-        font-size: var.$font-xlg;
-      }
-    }
-
-    p {
-      margin-bottom: 3.6rem;
-    }
   }
 }
