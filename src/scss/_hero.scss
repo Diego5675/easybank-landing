@@ -1,0 +1,99 @@
+@use 'variables' as var;
+@use 'mixins';
+
+.hero {
+  background-color: var.$veryLightGray;
+
+  .container {
+    @include mixins.breakpoint-up(large) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    position: relative;
+    min-height: 28rem;
+    background-image: url("../../images/bg-intro-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include mixins.breakpoint-up(medium) {
+      min-height: 40rem;
+      background-position: center 60%;
+    }
+
+    @include mixins.breakpoint-up(large) {
+      flex: 3;
+      order: 2;
+      height: 65.5rem;
+      background-image: none;
+    }
+
+    &::before {
+      @include mixins.breakpoint-up(large) {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 100%;
+        background-image: none;
+        background-size: 122%;
+        background-repeat: no-repeat;
+        background-position: 0 83%;
+        background-image: url("../../images/bg-intro-desktop.svg");
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../images/image-mockups.png");
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+
+      @include mixins.breakpoint-up(medium) {
+        background-size: 52%;
+      }
+
+      @include mixins.breakpoint-up(large) {
+        width: 120%;
+        height: 122%;
+        background-size: 95%;
+        background-position: center 150%;
+        left: 22%;
+      }
+    }
+  }
+
+  &__text {
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
+    text-align: center;
+
+    @include mixins.breakpoint-up(large) {
+      flex: 2;
+      order: 1;
+      text-align: left;
+    }
+
+    h1 {
+      margin-bottom: 2.4rem;
+      font-size: 3.7rem;
+      font-weight: 300;
+      line-height: 1.15;
+      color: var.$darkBlue;
+
+      @include mixins.breakpoint-up(large) {
+        font-size: var.$font-xlg;
+      }
+    }
+
+    p {
+      margin-bottom: 3.6rem;
+    }
+  }
+}
