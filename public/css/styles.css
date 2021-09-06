@@ -428,4 +428,81 @@ button:hover {
   font-size: 1.6rem;
 }
 
+.articles {
+  background-color: #fafafa;
+}
+.articles__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: max-content;
+  gap: 30px;
+}
+@media (min-width: 40em) {
+  .articles__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 64em) {
+  .articles__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.article__item {
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+.article__img {
+  width: 100%;
+  height: 20rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.article__text {
+  padding: 3rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 40em) {
+  .article__text {
+    padding: 3rem 2.5rem;
+  }
+}
+.article__author {
+  margin-bottom: 1.6rem;
+  font-size: 1rem;
+}
+.article__title {
+  margin-bottom: 1.6rem;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: #2d314d;
+}
+.article__title:hover {
+  text-decoration: underline;
+}
+.article__description {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.currency {
+  background-image: url("../../images/image-currency.jpg");
+}
+
+.restaurant {
+  background-image: url("../../images/image-restaurant.jpg");
+}
+
+.plane {
+  background-image: url("../../images/image-plane.jpg");
+}
+
+.confetti {
+  background-image: url("../../images/image-confetti.jpg");
+}
+
 /*# sourceMappingURL=styles.css.map */
