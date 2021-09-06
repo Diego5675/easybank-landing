@@ -1,16 +1,16 @@
 const $ = (selector) => document.querySelector(selector);
-const $btnHamburger = $("#btnHamburger");
+const $body = $("body");
 const $header = $(".header");
+const $btnHamburger = $("#btnHamburger");
 const $overlay = $(".overlay");
+const $mobileMenu = $(".header__menu");
 
 $btnHamburger.addEventListener("click", function () {
-  if ($header.classList.contains("open")) {
-    $header.classList.remove("open");
-    $overlay.classList.remove("fade-in");
-    $overlay.classList.add("fade-out");
-  } else {
-    $header.classList.add("open");
-    $overlay.classList.remove("fade-out");
-    $overlay.classList.add("fade-in");
-  }
+  const isMobileMenuOpen = $header.classList.contains("open");
+  $body.classList.toggle("noscroll");
+  $header.classList.toggle("open");
+  $overlay.classList.toggle("fade-in");
+  $overlay.classList.toggle("fade-out", isMobileMenuOpen);
+  $mobileMenu.classList.toggle("fade-in");
+  $mobileMenu.classList.toggle("fade-out", isMobileMenuOpen);
 });
