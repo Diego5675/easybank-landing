@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [github.com/Diego5675/easybank-landing](https://github.com/Diego5675/easybank-landing)
+- Solution URL: [github.com/diegopascual/easybank-landing](https://github.com/diegopascual/easybank-landing)
 - Live Site URL: [dpasch-easylanding.netlify.app](https://dpasch-easylanding.netlify.app/)
 
 ## My process
